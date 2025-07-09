@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package tmotor;
+
+message MotorCommand {
+  bool status = 1;
+  bool setzero = 2;
+  float position = 3;
+  float velocity = 4;
+  float torque = 5;
+  float kp = 6;
+  float kd = 7;
+}
+
+message MotorState {
+  double position = 1;
+  double velocity = 2;
+  double torque = 3;
+}
+
+service MotorService {
+  rpc SendCommand(MotorCommand) returns (MotorState);
+  rpc StreamState(MotorCommand) returns (stream MotorState);
+}
