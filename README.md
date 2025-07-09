@@ -6,9 +6,15 @@ messages can be exchanged over gRPC.
 
 ## Building the gRPC Server
 
-```
+```bash
 cd grpc
 cargo build
+```
+
+`protoc` must be available for the build to succeed. On Ubuntu install it via:
+
+```bash
+sudo apt-get install protobuf-compiler
 ```
 
 The server uses [`tonic`](https://github.com/hyperium/tonic) and listens on

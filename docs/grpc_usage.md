@@ -4,7 +4,9 @@ This guide explains how to build and run the Rust based gRPC service and how it 
 
 ## Building
 
-The service lives in the `grpc/` directory. Build it with Cargo:
+The service lives in the `grpc/` directory. It requires the `protoc`
+compiler which is provided by the `protobuf-compiler` package on
+Ubuntu. Build it with Cargo:
 
 ```bash
 cd grpc
