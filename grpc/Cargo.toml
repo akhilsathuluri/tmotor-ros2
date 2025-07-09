@@ -1,0 +1,15 @@
+[package]
+name = "tmotor_grpc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tonic = { version = "0.11", features = ["transport"] }
+tokio = { version = "1", features = ["macros","rt-multi-thread"] }
+
+[build-dependencies]
+tonic-build = "0.11"
+
+[[bin]]
+name = "tmotor_grpc_server"
+path = "src/main.rs"

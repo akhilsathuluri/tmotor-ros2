@@ -1,0 +1,26 @@
+# TMotor gRPC Interface
+
+This repository originally relied on ROS2 for communication with the motor
+testbench.  A new Rust crate located in `grpc/` demonstrates how the same
+messages can be exchanged over gRPC.
+
+## Building the gRPC Server
+
+```
+cd grpc
+cargo build
+```
+
+The server uses [`tonic`](https://github.com/hyperium/tonic) and listens on
+`127.0.0.1:50051` by default.
+
+## Running Tests
+
+```
+cd grpc
+cargo test
+```
+
+Tests are minimal at the moment and simply exercise the Rust tool chain.
+
+For a detailed migration strategy see `docs/grpc_migration_plan.md`.
